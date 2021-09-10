@@ -1,0 +1,88 @@
+:root {
+    --bg-color: white;
+    --main-color: black;
+    --main-color-transparent: rgba(255, 166, 0, 0.459);
+    --header-font-family: "Times New Roman";
+  }
+  
+  body {
+    background-color: var(--bg-color);
+    color: var(--main-color);
+    text-align: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .card {
+    border: 3px solid var(--main-color);
+    border-radius: 1em;
+    max-width: 350px;
+  }
+  
+  .card img {
+    width: 350px;
+    height: 250px;
+    object-fit: cover;
+    cursor: pointer;
+  }
+  
+  .card .title {
+    font-size: 1.25em;
+    font-family: var(--header-font-family);
+    color: red;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+  
+  .show > img {
+    width: 100%;
+    height: 40vh;
+    object-fit: cover;
+  }
+  
+  /* https://www.w3schools.com/howto/howto_css_modals.asp */
+  .modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: var(--main-color-transparent); /* Fallback color */
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: black;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 1em;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+  
+  /* The Close Button */
+  .close {
+    color: red;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .number-of-listings {
+    cursor: pointer;
+    text-decoration: underline;
+  }
