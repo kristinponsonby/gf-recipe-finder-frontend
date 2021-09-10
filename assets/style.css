@@ -11,29 +11,29 @@
     text-align: center;
   }
   
-  .container {
+  #recipe-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
   }
   
-  .card {
+  .recipe-card {
     border: 3px solid var(--main-color);
     border-radius: 1em;
     max-width: 350px;
   }
   
-  .card img {
+  .recipe-card img {
     width: 350px;
     height: 250px;
     object-fit: cover;
     cursor: pointer;
   }
   
-  .card .title {
+  .recipe-card .title {
     font-size: 1.25em;
     font-family: var(--header-font-family);
-    color: red;
+    color: black;
     cursor: pointer;
     text-decoration: underline;
   }
