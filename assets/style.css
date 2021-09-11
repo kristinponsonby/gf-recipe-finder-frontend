@@ -1,7 +1,7 @@
 :root {
     --bg-color: white;
     --main-color: black;
-    --main-color-transparent: rgba(255, 166, 0, 0.459);
+    --main-color-transparent: grey(255, 166, 0, 0.459);
     --header-font-family: "Times New Roman";
   }
   
@@ -59,17 +59,18 @@
   
   /* Modal Content/Box */
   .modal-content {
-    background-color: black;
+    background-color: grey;
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
-    border: 1px solid black;
+    border: 1px solid grey;
     border-radius: 1em;
     width: 80%; /* Could be more or less, depending on screen size */
   }
+
   
   /* The Close Button */
   .close {
-    color: red;
+    color: black;
     float: right;
     font-size: 28px;
     font-weight: bold;
