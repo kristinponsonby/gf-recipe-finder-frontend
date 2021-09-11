@@ -34,9 +34,24 @@ class Recipe {
               <p>Category: ${category}</p>
           </div>`
         }
+
+        static handleSubmit = (e) => {
+            e.preventDefault()
+            const newRecipe = {
+                name: e.target.name.value,
+                category: e.target.category.value,
+                ingredients: e.target.ingredients.value,
+                image_url: e.target.imageUrl.value
+            }
+            api.createRecipe(newRecipe).then(recipe => {
+                new Recipe(recipe).renderCard()
+            })
+            modal.close()
+            e.target.reset()
+        }
          
         static openRecipeForm = () => {
-            modal.main.innerHTML += `
+            modal.main.innerHTML = `
             <h1> Add a New GF Recipe </h1>
             <form>
             <label for="name">Name:</label><br>
@@ -46,10 +61,11 @@ class Recipe {
             <label for="ingredients">Ingredients:</label><br>
             <input type="text" name="ingredients"></br>
             <label for="imageUrl">Image:</label><br>
-            <input type="text" name="imageurl"></br>
+            <input type="text" name="imageUrl"></br>
             <input type="submit" value="Submit!">
             </form>`
-            modal.main.querySelector("form").addEventListener("submit", handleSubmit)()
+
+            modal.main.querySelector("form").addEventListener("submit", this.handleSubmit)
             modal.open()
         }
         
