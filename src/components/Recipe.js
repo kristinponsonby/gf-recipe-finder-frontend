@@ -3,8 +3,11 @@ class Recipe {
     static all = []
      constructor(data) {
          this.data = data
+         //this.data.details = [{}] 
+         //take this obj,iterate through them using .map, and return an array of JS instances of the Detail class, 
+         //just one instance in this case. To return this this.data.details = []
+         this.details = this.data.details.map(detail => new Detail(detail))
          this.constructor.all.push(this)
-         console.log(this )
     }
 
 
@@ -14,12 +17,15 @@ class Recipe {
         <div class="show">
             <img src="${imageUrl}" alt=${name}/>
             <p class="title">${name}</p>
-            <p>Ingredients: ${ingredients}</p>
-            <p>Category: ${category}</p>
+            <p>${category}</p>
+            <p>Ingredients</p>
+            <p> ${ingredients}</p>
+            <div class="container"></div>
+            <button id="goBack"> Go Back</button>
           </div>
-          <button id="goBack"> Go Back</button>
           `
           document.getElementById("goBack").addEventListener("click", Recipe.renderIndex)
+          this.details.forEach(detail => detail.render())
     }
 
 
@@ -30,8 +36,7 @@ class Recipe {
           `<div class="recipe-card" data-id=${id}>
               <img src=${imageUrl} alt=${name}/>
               <p class="title">${name}</p>
-              <p>Ingredients: ${ingredients}</p>
-              <p>Category: ${category}</p>
+              <p>${category}</p>
           </div>`
         }
 
@@ -86,7 +91,7 @@ class Recipe {
         const addRecipe = document.createElement("button")
         addRecipe.innerText = "Add a new recipe"
         addRecipe.addEventListener("click", this.openRecipeForm)
-        main.append(recipeContainer, addRecipe)
+        main.append(addRecipe, recipeContainer)
         this.all.forEach(recipe => recipe.renderCard())
         recipeContainer.addEventListener("click", this.handleIndexClick)
     }
