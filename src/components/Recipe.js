@@ -99,6 +99,8 @@ class Recipe {
 
      static getRecipes = () => {
         api.getRecipes().then(recipes => {
+            //clear out old recipe objects first
+            Recipe.all = []
              recipes.forEach(recipe => new Recipe(recipe))
             this.renderIndex()
          })
