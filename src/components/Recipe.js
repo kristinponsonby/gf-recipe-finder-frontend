@@ -12,7 +12,7 @@ class Recipe {
 
 
     renderShow = () => {
-        const { name, category, ingredients, imageUrl} = this.data
+        const { name, category, ingredients, imageUrl, username } = this.data
         document.getElementById("main").innerHTML = `
         <div class="show">
             <img src="${imageUrl}" alt=${name}/>
@@ -20,6 +20,7 @@ class Recipe {
             <p>${category}</p>
             <p>Ingredients</p>
             <p> ${ingredients}</p>
+            <p>Submitted By: ${username}</p>
             <div class="container"></div>
             <button id="goBack"> Go Back</button>
           </div>
@@ -34,7 +35,7 @@ class Recipe {
         const { name, category, ingredients, imageUrl, id } = this.data
          document.getElementById("recipe-container").innerHTML +=
           `<div class="recipe-card" data-id=${id}>
-              <img src=${imageUrl} alt=${name}/>
+              <img src="${imageUrl}" alt=${name}/>
               <p class="title">${name}</p>
               <p>${category}</p>
           </div>`
@@ -91,7 +92,7 @@ class Recipe {
         const addRecipe = document.createElement("button")
         addRecipe.innerText = "Add a new recipe"
         addRecipe.addEventListener("click", this.openRecipeForm)
-        main.append(addRecipe, recipeContainer)
+        main.append(addRecipe,recipeContainer)
         this.all.forEach(recipe => recipe.renderCard())
         recipeContainer.addEventListener("click", this.handleIndexClick)
     }
