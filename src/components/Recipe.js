@@ -17,10 +17,10 @@ class Recipe {
         <div class="show">
             <img src="${imageUrl}" alt=${name}/>
             <h1>${name}</h1>
-            <p>${category}</p>
-            <p>Ingredients</p>
+            <p><strong>${category}</strong></p>
+            <p><strong>Ingredients</strong></p>
             <p> ${ingredients}</p>
-            <p>Submitted By: ${username}</p>
+            <p><strong>Submitted By:</strong> ${username}</p>
             <div class="container"></div>
             <button id="goBack"> Go Back</button>
           </div>
