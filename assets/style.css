@@ -41,6 +41,7 @@
   }
 
   .card {
+    background-color: white;
     text-align: left;
     border: 2px solid var(--main-color);
     border-radius: 1em;
@@ -57,13 +58,15 @@
   }
   
   .recipe-card {
-    border: 2px solid var(--main-color);
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
     border-radius: 1em;
+    padding: 20px;
     max-width: 350px;
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-right: 2px;
-    margin-left: 2px;
+    margin-right: 20px;
+    margin-left: 20px;
   }
   
   .recipe-card img {
@@ -77,12 +80,13 @@
   .recipe-card .title {
     font-size: 1.25em;
     font-family: var(--header-font-family);
-    color: black;
+    color:  rgb(80, 80, 80);
     cursor: pointer;
     text-decoration: underline;
   }
   
   .show > img {
+    border-radius: 1em;
     width: 50%;
     height: 40vh;
     object-fit: cover;
