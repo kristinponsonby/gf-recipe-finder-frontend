@@ -42,7 +42,7 @@
 
   .card {
     background-color: white;
-    text-align: left;
+    text-align: center;
     border: 2px solid var(--main-color);
     border-radius: 1em;
     max-width: 750px;
@@ -90,6 +90,11 @@
     width: 50%;
     height: 40vh;
     object-fit: cover;
+  }
+
+  .show {
+    display: block;
+    background-position: left;
   }
   
   /* https://www.w3schools.com/howto/howto_css_modals.asp */

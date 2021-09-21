@@ -16,7 +16,7 @@ class Recipe {
         document.getElementById("main").innerHTML = `
         <div class="show">
             <img src="${imageUrl}" alt=${name}/>
-            <p class="title">${name}</p>
+            <h1>${name}</h1>
             <p>${category}</p>
             <p>Ingredients</p>
             <p> ${ingredients}</p>
