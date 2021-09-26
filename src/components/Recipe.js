@@ -1,5 +1,6 @@
 class Recipe {
 
+    
     static all = []
      constructor(data) {
          this.data = data
@@ -37,7 +38,10 @@ class Recipe {
           `<div class="recipe-card" data-id=${id}>
               <img src="${imageUrl}" alt=${name}/>
               <p class="title">${name}</p>
-              <p>${category}</p>
+              <p><strong>${category}</strong></p>
+              <ul>
+                <li class="like">Like! <span class="like-glyph">&#x2661;</span></li>
+              </ul>
           </div>`
         }
 
