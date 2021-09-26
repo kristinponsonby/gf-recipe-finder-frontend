@@ -16,6 +16,19 @@
     margin-right: 0px;
   }
 
+  .like-glyph {
+    cursor: pointer;
+  }
+
+  .activated-heart {
+    color: red;
+  }
+
+  .recipe-card > ul {
+    list-style-type: none;
+    justify-content: center;
+  }
+
   .hero-image {
     background-image: url("sweettooth.png");
     width: 100%;

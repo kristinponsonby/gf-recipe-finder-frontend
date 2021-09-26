@@ -4,18 +4,15 @@ let user
 
 const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
-
 const glyphStates = {
-  "♡": "♥",
-  "♥": "♡"
+ "♡": "♥",
+ "♥": "♡"
 };
-
 const colorStates = {
-  "red" : "",
-  "": "red"
+ "red" : "",
+"": "red"
 };
-
-const cardHearts = document.querySelectorAll(".like-glyph");
+const cardHearts = document.querySelectorAll(".like-glyph"); 
 
 
 //This runs your fetch call and gets all recipe json objects

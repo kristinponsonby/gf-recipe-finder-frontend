@@ -1,6 +1,5 @@
-class Recipe {
+    class Recipe {
 
-    
     static all = []
      constructor(data) {
          this.data = data
@@ -40,10 +39,18 @@ class Recipe {
               <p class="title">${name}</p>
               <p><strong>${category}</strong></p>
               <ul>
-                <li class="like">Like! <span class="like-glyph">&#x2661;</span></li>
+                <li class="like">Like<span class="like-glyph">&#x2661;</span></li>
               </ul>
           </div>`
         }
+
+      handleHeartClick = () => {
+            const heart = document.querySelector(".like-glyph")
+            heart.addEventListener("click", (e) => {
+                heart.innerText = glyphStates[heart.innerText];
+                heart.style.color = colorStates[heart.style.color];
+             } )
+         }
 
         static handleSubmit = (e) => {
             e.preventDefault()
