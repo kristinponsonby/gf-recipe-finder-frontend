@@ -30,6 +30,7 @@
     }
 
 
+
     renderCard = () => {
         // destructuring: 'this' is the passed instance of a recipe
         const { name, category, ingredients, imageUrl, id } = this.data
@@ -44,13 +45,21 @@
           </div>`
         }
 
-      handleHeartClick = () => {
-            const heart = document.querySelector(".like-glyph")
-            heart.addEventListener("click", (e) => {
+      heartStates = () => {
+             const heart = e.target
+              //cardHearts.forEach(heart => heart.addEventListener("click", (e) => {
+                //heart.addEventListener("click", (e) => {
                 heart.innerText = glyphStates[heart.innerText];
                 heart.style.color = colorStates[heart.style.color];
-             } )
          }
+
+         handleHeartClick() {
+         const cardHearts = document.querySelectorAll(".like-glyph")
+         for (const glyph of cardHearts) {
+            glyph.addEventListener("click", heartStates);
+            }
+         }
+
 
         static handleSubmit = (e) => {
             e.preventDefault()
