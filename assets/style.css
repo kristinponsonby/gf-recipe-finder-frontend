@@ -16,13 +16,11 @@
     margin-right: 0px;
   }
 
-  .like-glyph {
+  .heart-button {
     cursor: pointer;
-  }
-
-  .activated-heart {
     color: red;
   }
+
 
   .recipe-card > ul {
     list-style-type: none;

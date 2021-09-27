@@ -29,8 +29,6 @@
           this.details.forEach(detail => detail.render())
     }
 
-
-
     renderCard = () => {
         // destructuring: 'this' is the passed instance of a recipe
         const { name, category, ingredients, imageUrl, id } = this.data
@@ -40,26 +38,28 @@
               <p class="title">${name}</p>
               <p><strong>${category}</strong></p>
               <ul>
-                <li class="like">Like<span class="like-glyph">&#x2661;</span></li>
+                <li class="like">Like <span class="heart-button">♡</span></li>
               </ul>
           </div>`
         }
 
-      heartStates = () => {
-             const heart = e.target
-              //cardHearts.forEach(heart => heart.addEventListener("click", (e) => {
-                //heart.addEventListener("click", (e) => {
-                heart.innerText = glyphStates[heart.innerText];
-                heart.style.color = colorStates[heart.style.color];
-         }
-
-         handleHeartClick() {
-         const cardHearts = document.querySelectorAll(".like-glyph")
-         for (const glyph of cardHearts) {
-            glyph.addEventListener("click", heartStates);
+       static heartStates = (e) => {
+                const emptyHeart = '♡'
+                const fullHeart = '♥' 
+                const cardHeart = e.target;
+                if (cardHeart.innerText === emptyHeart) {
+                cardHeart.innerText = fullHeart}
+                else {
+                     cardHeart.innerText = emptyHeart
+                }
             }
-         }
 
+        static handleHeartClick = () => {
+         const allHearts = document.querySelectorAll(".heart-button")
+         for (const heart of allHearts) {
+            heart.addEventListener("click", this.heartStates);
+        }
+         }
 
         static handleSubmit = (e) => {
             e.preventDefault()
@@ -115,6 +115,7 @@
         main.append(addRecipe,recipeContainer)
         this.all.forEach(recipe => recipe.renderCard())
         recipeContainer.addEventListener("click", this.handleIndexClick)
+        recipeContainer.addEventListener("click", this.handleHeartClick)
     }
 
      static getRecipes = () => {
