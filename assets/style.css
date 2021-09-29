@@ -2,12 +2,12 @@
     --bg-color: white;
     --main-color: rgb(80, 80, 80);
     --main-color-transparent: grey(255, 166, 0, 0.2);
-    --header-font-family: "Times New Roman";
   }
   
   body {
     background-color: #FFDEE9; /* For browsers that do not support gradients */
     background-image: linear-gradient(180deg, #B5FFFC, #FFDEE9);
+    font-family: 'Lato', sans-serif;
     color: var(--main-color);
     text-align: center;
     margin-bottom: 100px;
@@ -22,7 +22,7 @@
   }
 
 
-  .recipe-card > ul {
+  .recipe-card > li {
     list-style-type: none;
     justify-content: center;
   }
@@ -43,6 +43,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
+    margin-top: 100px;
   }
 
   .container {
@@ -90,7 +91,7 @@
   
   .recipe-card .title {
     font-size: 1.25em;
-    font-family: var(--header-font-family);
+    font-family: var(--font-family);
     color:  rgb(80, 80, 80);
     cursor: pointer;
     text-decoration: underline;

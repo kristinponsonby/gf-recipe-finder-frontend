@@ -37,9 +37,7 @@
               <img src="${imageUrl}" alt=${name}/>
               <p class="title">${name}</p>
               <p><strong>${category}</strong></p>
-              <ul>
-                <li class="like">Like <span class="heart-button">♡</span></li>
-              </ul>
+                <li class="like">   Like <span class="heart-button">♡</span></li>
           </div>`
         }
 
@@ -129,3 +127,4 @@
 
 
 }  
+
