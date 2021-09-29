@@ -4,7 +4,7 @@ let user
 
 
 //This runs your fetch call and gets all recipe json objects
-Recipe.getRecipes()
+
 document.querySelector("form").addEventListener("submit", handleUsernameSubmit)
 
 function handleUsernameSubmit(e){

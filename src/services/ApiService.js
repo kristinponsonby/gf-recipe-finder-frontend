@@ -5,12 +5,17 @@ class ApiService {
     }
 
     //Fetch call 1
-    getRecipes = () => fetch(this.api + "/recipes").then(res => res.json())
+    getRecipes = () => { 
+        return fetch(this.api + "/recipes")
+        .then(res => res.json())
+    }
 
     //Fetch call 2
     createRecipe = (newRecipe) => {
+        console.log(newRecipe)
+        console.log(user)
         // Make sure when a user posts a new recipe, the user id is first added to that new recipe
-        newRecipe.user_id = user.id
+    newRecipe.user_id = user.id
      return fetch(this.api + "/recipes", {
       method: 'POST', // or 'PUT'
       headers: {
@@ -23,6 +28,7 @@ class ApiService {
 
     //Fetch call 3
     findOrCreateUser = (username) => {
+        console.log(username)
         return fetch(this.api + "/users", {
             method: 'POST', // or 'PUT'
             headers: {
